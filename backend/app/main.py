@@ -16,9 +16,9 @@ with open('./app/rfr_v1.pkl', 'rb') as f:
 
 
 class Payload(BaseModel):
-    transaction_amount: float
-    avg_transaction_amount: float
-    frequency_of_transactions: float
+    Transaction_Amount: float
+    Average_Transaction_Amount: float
+    Frequency_of_Transactions: float
 
 app = FastAPI()
 
