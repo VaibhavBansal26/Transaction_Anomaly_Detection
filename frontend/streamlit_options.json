@@ -1,14 +1,14 @@
 {
     "slider_fields": {
-      "Transaction_Amount": [
+      "transaction_amount": [
         3,
         35682
       ],
-      "Average_Transaction_Amount": [
+      "avg_transaction_amount": [
         1,
         6082
       ],
-      "Frequency_Of_Transactions": [
+      "frequency_of_transactions": [
         0,
         16
       ]
