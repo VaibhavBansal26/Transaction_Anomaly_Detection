@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import IsolationForest
 from sklearn.preprocessing import StandardScaler, FunctionTransformer
+from preprocessing import preprocess_data
 from sklearn.pipeline import Pipeline
 import joblib
 
@@ -10,24 +11,24 @@ def load_data(filepath):
     return pd.read_csv(filepath)
 
 # Custom preprocessing function
-def preprocess_data(data):
-    # Handle missing values
-    data.dropna(inplace=True)
+# def preprocess_data(data):
+#     # Handle missing values
+#     data.dropna(inplace=True)
 
-    # Select relevant features
-    relevant_features = ['Transaction_Amount', 'Average_Transaction_Amount', 'Frequency_of_Transactions']
+#     # Select relevant features
+#     relevant_features = ['Transaction_Amount', 'Average_Transaction_Amount', 'Frequency_of_Transactions']
 
-    # Check if all relevant features exist
-    if not all(feature in data.columns for feature in relevant_features):
-        raise ValueError("Dataset is missing required columns")
+#     # Check if all relevant features exist
+#     if not all(feature in data.columns for feature in relevant_features):
+#         raise ValueError("Dataset is missing required columns")
 
-    # Add target column (example anomaly flag logic)
-    mean_amount = data['Transaction_Amount'].mean()
-    std_amount = data['Transaction_Amount'].std()
-    anomaly_threshold = mean_amount + 2 * std_amount
-    data['Is_Anomaly'] = data['Transaction_Amount'] > anomaly_threshold
+#     # Add target column (example anomaly flag logic)
+#     mean_amount = data['Transaction_Amount'].mean()
+#     std_amount = data['Transaction_Amount'].std()
+#     anomaly_threshold = mean_amount + 2 * std_amount
+#     data['Is_Anomaly'] = data['Transaction_Amount'] > anomaly_threshold
 
-    return data
+#     return data
 
 # Function to split data into training and testing sets
 def split_data(data, features, target_column):
