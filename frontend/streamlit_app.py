@@ -7,7 +7,7 @@ user_options = {}
 
 st.title('Median House Value Prediction')
 
-streamlit_options = json.load(open("./streamlit_options.json"))
+streamlit_options = json.load(open("/mount/src/transaction_anomaly_detection/frontend/streamlit_options.json"))
 for field_name, range in streamlit_options["slider_fields"].items():
     min_val, max_val = range
     current_value = round((min_val + max_val)/2)
